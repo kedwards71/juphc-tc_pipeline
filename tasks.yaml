@@ -36,13 +36,13 @@ spec:
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: npminstall
+  name: npm
 spec:
   description: Will clean the current cache and perform an npm install
   workspaces:
     - name: source
   steps:
-    - name: install
+    - name: npminstall
       image: node:20-buster-slim
       workingDir: $(workspaces.source.path)
       script: |
@@ -67,7 +67,7 @@ spec:
   workspaces:
     - name: source
   steps:
-    - name: test
+    - name: jasminetests
       image: node:20-buster-slim
       workingDir: $(workspaces.source.path)
       script: | 
