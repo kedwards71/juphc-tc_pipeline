@@ -1,5 +1,5 @@
 apiVersion: tekton.dev/v1beta1
-kind: KIND
+kind: PipelineRun
 metadata:
   generateName: juphc-tc-pipeline-run-
 spec:
@@ -12,7 +12,7 @@ spec:
     - name: branch
       value: "main"
     - name: app-name
-      value: "tax-calculator"
+      value: "tax-calculato"
   workspaces:
   - name: pipeline-workspace
     persistentVolumeClaim:
